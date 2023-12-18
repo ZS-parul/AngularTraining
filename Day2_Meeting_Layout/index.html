@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grid-container" id="gridContainer">
+      </div>
+
+      <script>
+        // Example: Get the number of items from an API or some dynamic source
+        const numberOfItems = 12;
+      
+        // Get the grid container element
+        const gridContainer = document.getElementById('gridContainer');
+        // Create and append grid items based on the number obtained
+        for (let i = 0; i < numberOfItems; i++) {
+        const gridItem = document.createElement('div');
+        gridItem.className = 'grid-item';
+        const img = document.createElement('img');
+        img.src = 'person.jpeg'; // Replace with the actual path to your image
+        if(i<11){
+        gridItem.appendChild(img);
+        gridContainer.appendChild(gridItem);
+        }
+        else{  
+        gridItem.textContent=(numberOfItems-11)+"+";  
+        gridItem.appendChild(img);  
+        gridContainer.appendChild(gridItem);
+        break;
+        }
+        }
+
+      </script>
+</body>
+</html>
